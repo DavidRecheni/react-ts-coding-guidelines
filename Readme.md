@@ -134,7 +134,13 @@ interface IProps {
 
 # System architecture
 
-## Data handling
+
+## No prop drilling
+
+If you need to pass a prop to a component, make sure it's not a prop that the component can import bypassing the parent. 
+If you have to pass a prop to a child more than two levels, then it should be included in a context provider, this way every component **only** receives props that they actually need and are going to implement.
+
+## Data handling (with react-query)
 
 **Every** API request must be stored inside a `service` file.  
 
